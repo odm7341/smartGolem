@@ -1,0 +1,12 @@
+execute positioned ~1 ~ ~ if block ~ ~ ~ minecraft:chest[open=true] run function smart_golem:golem/learn_on_open
+execute positioned ~-1 ~ ~ if block ~ ~ ~ minecraft:chest[open=true] run function smart_golem:golem/learn_on_open
+execute positioned ~ ~ ~1 if block ~ ~ ~ minecraft:chest[open=true] run function smart_golem:golem/learn_on_open
+execute positioned ~ ~ ~-1 if block ~ ~ ~ minecraft:chest[open=true] run function smart_golem:golem/learn_on_open
+execute positioned ~ ~1 ~ if block ~ ~ ~ minecraft:chest[open=true] run function smart_golem:golem/learn_on_open
+execute positioned ~ ~-1 ~ if block ~ ~ ~ minecraft:chest[open=true] run function smart_golem:golem/learn_on_open
+execute positioned ~1 ~ ~ if block ~ ~ ~ minecraft:trapped_chest[open=true] run function smart_golem:golem/learn_on_open
+execute positioned ~-1 ~ ~ if block ~ ~ ~ minecraft:trapped_chest[open=true] run function smart_golem:golem/learn_on_open
+execute positioned ~ ~ ~1 if block ~ ~ ~ minecraft:trapped_chest[open=true] run function smart_golem:golem/learn_on_open
+execute positioned ~ ~ ~-1 if block ~ ~ ~ minecraft:trapped_chest[open=true] run function smart_golem:golem/learn_on_open
+execute positioned ~ ~1 ~ if block ~ ~ ~ minecraft:trapped_chest[open=true] run function smart_golem:golem/learn_on_open
+execute positioned ~ ~-1 ~ if block ~ ~ ~ minecraft:trapped_chest[open=true] run function smart_golem:golem/learn_on_open
