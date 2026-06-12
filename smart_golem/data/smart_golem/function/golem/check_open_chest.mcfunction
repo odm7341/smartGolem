@@ -1,1 +1,0 @@
-execute as @e[type=minecraft:copper_golem] at @s run function smart_golem:golem/scan_open_chests

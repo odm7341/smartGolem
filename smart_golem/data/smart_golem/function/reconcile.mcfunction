@@ -1,1 +1,0 @@
-execute as @e[type=minecraft:copper_golem] unless data entity @s equipment.mainhand run function smart_golem:golem/reconcile_golem

@@ -1,2 +1,0 @@
-execute if score #debug sg_config matches 1 run tellraw @a [{"text":"[Smart Golem Debug] ","color":"gold"},{"text":"Reconcile: checking memories for golem...","color":"gray"}]
-function smart_golem:golem/reconcile_check with storage smart_golem:macro_item

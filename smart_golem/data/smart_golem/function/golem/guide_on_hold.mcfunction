@@ -1,19 +1,9 @@
-scoreboard players set $at_dest sg_guide 0
-data modify storage smart_golem:macro gu set from entity @s UUID
-data modify storage smart_golem:macro item set from entity @s equipment.mainhand.id
-execute if score #debug sg_config matches 1 run tellraw @a [{"text":"[Smart Golem Debug] ","color":"gold"},{"text":"Guide: golem picked up ","color":"green"},{"nbt":"item","storage":"smart_golem:macro","color":"yellow"}]
-execute if block ~1 ~ ~ #smart_golem:destination_containers run scoreboard players set $at_dest sg_guide 1
-execute if block ~-1 ~ ~ #smart_golem:destination_containers run scoreboard players set $at_dest sg_guide 1
-execute if block ~ ~ ~1 #smart_golem:destination_containers run scoreboard players set $at_dest sg_guide 1
-execute if block ~ ~ ~-1 #smart_golem:destination_containers run scoreboard players set $at_dest sg_guide 1
-execute if block ~ ~1 ~ #smart_golem:destination_containers run scoreboard players set $at_dest sg_guide 1
-execute if block ~ ~-1 ~ #smart_golem:destination_containers run scoreboard players set $at_dest sg_guide 1
-execute if block ~1 ~ ~1 #smart_golem:destination_containers run scoreboard players set $at_dest sg_guide 1
-execute if block ~-1 ~ ~1 #smart_golem:destination_containers run scoreboard players set $at_dest sg_guide 1
-execute if block ~1 ~ ~-1 #smart_golem:destination_containers run scoreboard players set $at_dest sg_guide 1
-execute if block ~-1 ~ ~-1 #smart_golem:destination_containers run scoreboard players set $at_dest sg_guide 1
-execute if score $at_dest sg_guide matches 0 run data modify entity @s NoAI set value 1b
-execute if score $at_dest sg_guide matches 0 run tag @s add sg_guided
-execute if score $at_dest sg_guide matches 0 run function smart_golem:golem/guide_hold_prepare with storage smart_golem:macro
-execute if score $at_dest sg_guide matches 0 run data modify entity @s NoAI set value 0b
-execute if score #debug sg_config matches 1 if score $at_dest sg_guide matches 1 run tellraw @a [{"text":"[Smart Golem Debug] ","color":"gold"},{"text":"Guide: at destination chest, skipping guidance cycle","color":"gray"}]
+data modify storage smart_golem:guide item set from entity @s equipment.mainhand.id
+execute if score #debug sg_config matches 1 run tellraw @a [{"text":"[Smart Golem Debug] ","color":"gold"},{"text":"Guide: golem picked up ","color":"green"},{"nbt":"item","storage":"smart_golem:guide","color":"yellow"}]
+execute if score #debug sg_config matches 1 run tellraw @a [{"text":"[Smart Golem Debug]  ","color":"gold"},{"text":"Searching chests for ","color":"gray"},{"nbt":"item","storage":"smart_golem:guide","color":"yellow"}]
+data modify entity @s NoAI set value 1b
+tag @s add sg_guided
+function smart_golem:guide/set_target
+execute if score #debug sg_config matches 1 if data storage smart_golem:guide found run tellraw @a [{"text":"[Smart Golem Debug] ","color":"gold"},{"text":"Guide: found target chest, guidance active","color":"green"}]
+execute if score #debug sg_config matches 1 unless data storage smart_golem:guide found run tellraw @a [{"text":"[Smart Golem Debug] ","color":"gold"},{"text":"Guide: no chest with this item found","color":"red"}]
+data modify entity @s NoAI set value 0b

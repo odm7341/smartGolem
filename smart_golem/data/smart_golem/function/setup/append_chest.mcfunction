@@ -1,0 +1,2 @@
+$data modify storage smart_golem:setup_chests append value {pos:[I;$(px),$(py),$(pz)]}
+$execute if score #debug sg_config matches 1 run tellraw @a [{"text":"[Smart Golem Debug] ","color":"gold"},{"text":"Setup: found chest at (","color":"gray"},{"text":"$(px)","color":"aqua"},{"text":",","color":"gray"},{"text":"$(py)","color":"aqua"},{"text":",","color":"gray"},{"text":"$(pz)","color":"aqua"},{"text":")","color":"gray"}]

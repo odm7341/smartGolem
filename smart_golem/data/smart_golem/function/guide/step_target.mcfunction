@@ -1,0 +1,2 @@
+execute if score loop_i sg_guide < n sg_guide run execute store result storage smart_golem:guide i int 1 run scoreboard players get loop_i sg_guide
+execute if score loop_i sg_guide < n sg_guide run function smart_golem:guide/check_one with storage smart_golem:guide
