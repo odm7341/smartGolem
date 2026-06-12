@@ -1,0 +1,6 @@
+$execute positioned $(sx) $(sy) $(sz) positioned ~1 ~ ~ if block ~ ~ ~ #smart_golem:storage_containers if data block ~ ~ ~ Items[0] run function smart_golem:golem/learn_chest with storage smart_golem:macro_item
+$execute positioned $(sx) $(sy) $(sz) positioned ~-1 ~ ~ if block ~ ~ ~ #smart_golem:storage_containers if data block ~ ~ ~ Items[0] run function smart_golem:golem/learn_chest with storage smart_golem:macro_item
+$execute positioned $(sx) $(sy) $(sz) positioned ~ ~ ~1 if block ~ ~ ~ #smart_golem:storage_containers if data block ~ ~ ~ Items[0] run function smart_golem:golem/learn_chest with storage smart_golem:macro_item
+$execute positioned $(sx) $(sy) $(sz) positioned ~ ~ ~-1 if block ~ ~ ~ #smart_golem:storage_containers if data block ~ ~ ~ Items[0] run function smart_golem:golem/learn_chest with storage smart_golem:macro_item
+$execute positioned $(sx) $(sy) $(sz) positioned ~ ~1 ~ if block ~ ~ ~ #smart_golem:storage_containers if data block ~ ~ ~ Items[0] run function smart_golem:golem/learn_chest with storage smart_golem:macro_item
+$execute positioned $(sx) $(sy) $(sz) positioned ~ ~-1 ~ if block ~ ~ ~ #smart_golem:storage_containers if data block ~ ~ ~ Items[0] run function smart_golem:golem/learn_chest with storage smart_golem:macro_item
