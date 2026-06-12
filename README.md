@@ -48,8 +48,21 @@ Hold an item, stand next to a chest with a copper golem nearby.
 /function smart_golem:debug/on
 /function smart_golem:debug/off
 ```
+When enabled, shows gold `[Smart Golem Debug]` messages tracing the guide and auto-learn systems.
 
-### Check memory
+### List known chests (nearest golem)
+```
+/function smart_golem:utility/list_markers
+```
+Shows every item+chest location the nearest copper golem has learned.
+
+### Check expected chest for an item
+```
+/function smart_golem:utility/check_chest
+```
+Hold an item in your main hand and run this — shows whether the nearest golem has a matching memory, and whether that chest still contains items (ACTIVE), is empty, or is gone.
+
+### Check memory markers directly
 ```
 /data get entity @e[type=marker,tag=sg_memory,limit=1]
 ```
@@ -77,6 +90,11 @@ smart_golem/
         │   ├── debug/
         │   │   ├── on.mcfunction
         │   │   └── off.mcfunction
+        │   ├── utility/
+        │   │   ├── list_markers.mcfunction
+        │   │   ├── list_markers_macro.mcfunction
+        │   │   ├── check_chest.mcfunction
+        │   │   └── check_chest_macro.mcfunction
         │   ├── golem/
         │   │   ├── guide.mcfunction     # Find golems with visited chests
         │   │   ├── guide_golem.mcfunction
