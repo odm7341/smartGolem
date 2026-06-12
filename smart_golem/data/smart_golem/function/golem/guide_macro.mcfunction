@@ -1,4 +1,4 @@
-data modify storage smart_golem:goal set value {}
+data modify storage smart_golem:goal . set value {}
 $execute as @e[type=marker,tag=sg_memory,nbt={data:{golem_uuid:$(gu)}},sort=nearest,limit=1] at @s if block ~ ~ ~ #smart_golem:storage_containers if data block ~ ~ ~ Items[0] run function smart_golem:golem/set_active_target
 execute if score #debug sg_config matches 1 if data storage smart_golem:goal pos run tellraw @a [{"text":"[Smart Golem Debug] ","color":"gold"},{"text":"Guide: ACTIVE chest found at ","color":"green"},{"nbt":"pos","storage":"smart_golem:goal","color":"aqua"},{"text":" dim=","color":"gray"},{"nbt":"dim","storage":"smart_golem:goal","color":"light_purple"}]
 $execute unless data storage smart_golem:goal pos as @e[type=marker,tag=sg_memory,nbt={data:{golem_uuid:$(gu)}},sort=nearest,limit=1] at @s run function smart_golem:golem/set_any_target
