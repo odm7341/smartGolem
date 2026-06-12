@@ -1,4 +1,7 @@
+execute if score #debug sg_config matches 1 run tellraw @a [{"text":"[Smart Golem Debug] ","color":"gold"},{"text":"  marker at (","color":"gray"},{"nbt":"Pos[0]","entity":"@s","color":"aqua"},{"text":",","color":"gray"},{"nbt":"Pos[1]","entity":"@s","color":"aqua"},{"text":",","color":"gray"},{"nbt":"Pos[2]","entity":"@s","color":"aqua"},{"text":") ","color":"gray"},{"nbt":"data.item","entity":"@s","color":"yellow"},{"text":" uuid=","color":"gray"},{"nbt":"data.golem_uuid","entity":"@s","color":"light_purple"}]
 execute unless score $found sg_guide matches 1 if block ~ ~ ~ #smart_golem:destination_containers run execute store result score $target_x sg_guide run data get entity @s Pos[0]
 execute unless score $found sg_guide matches 1 if block ~ ~ ~ #smart_golem:destination_containers run execute store result score $target_y sg_guide run data get entity @s Pos[1]
 execute unless score $found sg_guide matches 1 if block ~ ~ ~ #smart_golem:destination_containers run execute store result score $target_z sg_guide run data get entity @s Pos[2]
 execute unless score $found sg_guide matches 1 if block ~ ~ ~ #smart_golem:destination_containers run scoreboard players set $found sg_guide 1
+execute if score #debug sg_config matches 1 if block ~ ~ ~ #smart_golem:destination_containers run tellraw @a [{"text":"  -> IS a destination container (matches #destination_containers)","color":"green"}]
+execute if score #debug sg_config matches 1 unless block ~ ~ ~ #smart_golem:destination_containers run tellraw @a [{"text":"  -> NOT a destination container","color":"red"}]

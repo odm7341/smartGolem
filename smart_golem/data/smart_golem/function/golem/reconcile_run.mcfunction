@@ -1,0 +1,4 @@
+$execute as @e[type=marker,tag=sg_chest,nbt={data:{golem_uuid:$(gu)}}] at @s unless block ~ ~ ~ #smart_golem:storage_containers run kill @e[type=marker,tag=sg_memory,distance=..1]
+$execute as @e[type=marker,tag=sg_chest,nbt={data:{golem_uuid:$(gu)}}] at @s unless block ~ ~ ~ #smart_golem:storage_containers run kill @s
+$execute as @e[type=marker,tag=sg_chest,nbt={data:{golem_uuid:$(gu)}}] at @s if block ~ ~ ~ #smart_golem:storage_containers if data block ~ ~ ~ Items[0] run function smart_golem:golem/learn_chest with storage smart_golem:macro_item
+$execute if score #debug sg_config matches 1 run tellraw @a [{"text":"[Smart Golem Debug] ","color":"gold"},{"text":"Reconcile: done scanning for golem","color":"gray"}]
