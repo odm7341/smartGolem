@@ -1,1 +1,0 @@
-$execute as @e[type=minecraft:copper_golem,nbt={UUID:$(gu)}] run data modify entity @s Brain.memories."minecraft:visited_block_positions".value append value {pos: [I;$(pos_x),$(pos_y),$(pos_z)], dimension:"$(dim)"}

@@ -13,4 +13,4 @@ execute at @p positioned ~-1 ~ ~ if block ~ ~ ~ #smart_golem:storage_containers 
 execute at @p positioned ~ ~ ~1 if block ~ ~ ~ #smart_golem:storage_containers run function smart_golem:teach_at with storage smart_golem:macro
 execute at @p positioned ~ ~ ~-1 if block ~ ~ ~ #smart_golem:storage_containers run function smart_golem:teach_at with storage smart_golem:macro
 tellraw @p [{"text":"[Smart Golem] ","color":"green"},{"text":"Taught chest for golem: ","color":"gray"},{"nbt":"item","storage":"smart_golem:macro","color":"yellow"}]
-execute if score #debug sg_config matches 1 run tellraw @a [{"text":"[Smart Golem Debug] ","color":"gold"},{"text":"Teach complete - markers created at adjacent chest blocks","color":"green"}]
+execute if score #debug sg_config matches 1 run tellraw @a [{"text":"[Smart Golem Debug] ","color":"gold"},{"text":"Teach complete - memory stored at chest position","color":"green"}]
