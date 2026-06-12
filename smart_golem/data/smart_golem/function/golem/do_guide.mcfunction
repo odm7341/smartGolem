@@ -1,0 +1,2 @@
+data modify entity @s Brain.memories."minecraft:visited_block_positions".value set value []
+execute if score #debug sg_config matches 1 run tellraw @a [{"text":"[Smart Golem Debug] ","color":"gold"},{"text":"Guide: Cleared visited_block_positions for golem, targeting chest at ","color":"green"},{"nbt":"pos","storage":"smart_golem:goal","color":"aqua"},{"text":" dim=","color":"gray"},{"nbt":"dim","storage":"smart_golem:goal","color":"light_purple"},{"text":" active=","color":"gray"},{"nbt":"active","storage":"smart_golem:goal","color":"yellow"}]
